@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norm: Your Personal Habit Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <h1 class="title">
+            <span class="sparkle">✨</span>
+            Norm
+            <span class="sparkle">✨</span>
+          </h1>
+          <p class="subtitle">Your personal habit tracker.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-number" id="totalHabits">0</div>
+            <div class="stat-label">Active Habits</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="totalCompletions">0</div>
+            <div class="stat-label">Total Check-ins</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Action Buttons -->
+      <div class="actions">
+        <button class="btn btn-primary" id="addHabitBtn">
+          <span class="btn-icon">+</span>
+          Add Habit
+        </button>
+        <input
+          type="file"
+          id="importFile"
+          accept=".csv"
+          style="display: none"
+        />
+      </div>
+
+      <!-- Add Habit Form -->
+      <div class="add-form" id="addForm" style="display: none">
+        <input
+          type="text"
+          id="habitNameInput"
+          class="habit-input"
+          placeholder="e.g., 10 minutes meditation, 10000 steps..."
+          maxlength="50"
+        />
+        <div class="form-actions">
+          <button class="btn btn-primary" id="saveHabitBtn">Save</button>
+          <button class="btn btn-cancel" id="cancelBtn">Cancel</button>
+        </div>
+      </div>
+
+      <!-- Calendar Header -->
+      <div class="calendar-header">
+        <div class="day-label">Habit</div>
+        <div class="days-grid" id="daysHeader"></div>
+      </div>
+
+      <!-- Habits List -->
+      <div class="habits-list" id="habitsList">
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">🌱</div>
+          <p>Start your journey!</p>
+          <p class="empty-subtitle">Add your first habit to begin tracking.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-actions">
+        <button class="btn btn-footer" id="exportBtn">
+          <span class="btn-icon">↓</span> Export
+        </button>
+        <button class="btn btn-footer" id="importBtn">
+          <span class="btn-icon">↑</span> Import
+        </button>
+      </div>
+
+      <div class="footer-text">
+        All data stays on your device. No cloud storage.
+      </div>
+      <div class="footer-text">
+        <a
+          href="https://github.com/gurbaxani/habit-tracker"
+          target="_blank"
+          rel="noopener"
+          >Source Code</a
+        >
+        • Built with
+        <a href="http://aimddb.com" target="_blank" rel="noopener ">AI</a>
+      </div>
+      <div class="footer-text">
+        © <span id="currentYear"></span> Gurbax (Ashwini Gurbaxani)
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
